@@ -1,0 +1,11 @@
+<p>This is the partial for view 1.</p>
+  {{gs}}
+  <b>Players ({{gs.query.numplayers}} / {{gs.query.maxplayers}})</b>
+  <div class="progress progress-striped">
+    <div class="progress-bar progress-bar-success " role="progressbar" style="width: {{ host.cpu_get_usage }}%">
+      <span class="sr-only">{{ instance.cpu_get_usage }}% CPU usage</span>
+    </div>
+  </div>
+  
+  {{gs.query.motd}}
+  

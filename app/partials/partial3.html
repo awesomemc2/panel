@@ -1,0 +1,17 @@
+<h1>Console</h1>
+<div ng-switch="server_status">
+<div ng-switch-when="3">SERVER STOPPING</div>
+<div ng-switch-when="2">SERVER STARTED <a href="" ng-click="gsoff()">off</a></div>
+<div ng-switch-when="1">SERVER STARTING </div>
+<div ng-switch-when="0">SERVER OFF <a href="" ng-click="gson()">on</a></div>
+</div>
+
+<p>
+  <div ng-repeat="message in messages" style="background-color:lightgrey">
+  {{message}}
+  </div>
+  <form ng-submit="submit()">
+  <input type="text" ng-model="text">
+  <input type="submit" id="submit" value="Submit" class="btn btn-sm btn-primary" />
+  </form>
+</p>

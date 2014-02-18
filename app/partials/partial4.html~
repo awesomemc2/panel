@@ -1,0 +1,24 @@
+<h1>Configs</h1>
+
+<p>
+  <div class="btn-group">
+    <div ng-repeat="(section,files) in configlist" class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+	{{section}} <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+	<li ng-repeat="file in files" ng-click="loadfile(file)"><a href="">{{file}}</a></li>
+      </ul>
+    </div>  
+  </div> 
+  <br><br>
+
+
+    <form ng-submit="submit()">  
+    <textarea ng-model="file.contents" name="contents" id="contents">{{f.contents}}</textarea>
+    <input type="submit" id="submit" value="Submit" class="btn btn-sm btn-primary" />
+
+      </form>
+      
+  </form>
+</p>

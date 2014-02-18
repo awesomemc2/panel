@@ -1,0 +1,62 @@
+<h1>Plugins</h1>
+
+<div>
+  <tabset>
+    <tab heading="Installed">
+	<div class="btn-group ">
+	  <div ng-repeat="(section,files) in addonslist" class="btn-group">
+	    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+	      {{section}} <span class="caret"></span>
+	    </button>
+	    <ul class="dropdown-menu" role="menu">
+	      <li ng-repeat="file in files"><a href="#">{{file}}</a></li>
+	    </ul>
+	  </div>  
+	</div> 
+    </tab>
+    <tab heading="Installable">
+      Search : <input type="text">
+      	<div class="btn-group">
+	  <a href="" ng-repeat="section in categories" class="btn btn-sm btn-success">
+	  {{section.name}} ({{section.count}})
+	  </a>
+
+	</div>
+	  <div class="col-md-6" ng-repeat="addon in addonsp">
+	    <br><span class="label label-info">{{addon.server}}</span> <b>{{addon.plugin_name}}
+	    <br><span style="font-size:0.75em"><i>by : <span ng-repeat="author in addon.authors">{{author}} </span></i></span>
+	    <br>{{addon.description}}
+	    <br><div class="btn-group">
+	    <a href="{{addon.website}}" class="btn btn-primary btn-sm"><i class="fa fa-desktop"></i> Website</a>
+	    <a href="{{addon.website}}" class="btn btn-info btn-sm"><i class="fa fa-wrench"></i> Commands</a>	    
+	    	<div class="btn-group ">
+		  <div class="btn-group">
+		    <button type="button" class="btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown">
+		     <i class="fa fa-download"></i> Install <span class="caret"></span>
+		    </button>
+		    <ul class="dropdown-menu" role="menu">
+		      <li ng-repeat="version in addon.versions"><a href="#">{{version.version}} - <span class="label label-info" ng-repeat="game_version in version.game_versions" style="margin-right:1em;">{{game_version}}</span></a></li>
+		    </ul>
+		  </div>  
+	      </div>
+	    </div>
+	    <br>{{addon.versions.game_versions}}
+	  </div>
+	  
+
+    <pagination total-items="total_count" page="currentPage" max-size="20" items-per-page="16" on-select-page="pageswap()"></pagination>
+
+
+    </tab>
+
+
+  </tabset>
+
+
+</div>
+
+<p>
+
+  <br><br>
+
+</p>
